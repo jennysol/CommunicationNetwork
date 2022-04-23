@@ -1,0 +1,13 @@
+<h1>Timeline</h1>
+<p>Veja o que as pessoas que você segue estão publicando</p>
+
+<div class="row col-12 d-flex justify-content-between">
+  <div class="col-8">
+    <% @posts.each do |post|%>
+      <%= render "user/post_card" , post: post %>
+    <% end %>
+  </div>
+  <div class="col-3 mr-4">
+    <%= image_tag("girl.png", alt: "illustration")%>
+  </div>
+</div>
