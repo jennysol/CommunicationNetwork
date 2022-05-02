@@ -26,6 +26,9 @@ Rails.application.routes.draw do
     resources :users, only: :show
     resources :comments, only: [:create, :destroy]
 
+    resources :room_messages
+    resources :rooms
+
     post 'follow/:id', to: "subscriptions#follow", as: :follow
     post 'unfollow/:id', to: "subscriptions#unfollow", as: :unfollow
   end

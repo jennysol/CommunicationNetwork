@@ -6,6 +6,15 @@ RUN apt-get update -qq; \
     apt-get install -y build-essential \
                        libpq-dev;
 
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    npm
+
+RUN npm install -g yarn
+# RUN npm install npm@latest -g && \
+#     npm install n -g && \
+#     n latest
+
 # Setup Workdir
 RUN mkdir /communication_network
 WORKDIR /communication_network

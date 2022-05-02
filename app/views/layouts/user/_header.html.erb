@@ -17,6 +17,9 @@
       <li class="nav-item <%= current_page?(user_profile_path)? "active" : "" %>">
         <a class="nav-link" href="<%= user_profile_path %>">Meu perfil</a>
       </li>
+      <li class="nav-item <%= current_page?(new_user_room_path)? "active" : "" %>">
+        <a class="nav-link" href="<%= user_rooms_path %>">Bate Papo</a>
+      </li>
     </ul>
     <div class="nav-item d-flex">
       <ul class="navbar-nav">

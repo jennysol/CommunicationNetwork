@@ -34,9 +34,19 @@ services:
       - communication_network_development
     stdin_open: true
     tty: true
+  
+  redis:
+    image: redis:5-alpine
+    restart: always
+    command: redis-server
+    volumes:
+      - redis:/data
+    networks:
+      - communication_network_development
 
 networks:
   communication_network_development:
+  redis:
 volumes: 
   postgres:
   redis:
