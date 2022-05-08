@@ -1,5 +1,5 @@
-<h1>Following</h1>
-<p class="mb-4">Pessoas que você segue</p>
+<h1>Meus Inspetores</h1>
+<p class="mb-4">Inspetores da sua equipe</p>
 <div class="row">
   <% @following.each do |user| %>
     <div class="col-lg-4">
@@ -8,9 +8,10 @@
         <div class="card-body">
           Email:<p class="card-text text-muted"><%= user.email %></p>
           Telefone:<p class="card-text text-muted"><%= user.phone %></p>
-          <%= link_to("Deixar de Seguir", user_unfollow_path(user), method: :post, class: "btn btn-secondary")%>
+          Indústria:<p class="card-text text-muted"><%= user.industry %></p>
+          <%= link_to("Deixar de Seguir", user_unfollow_path(user), method: :post, class: "col-12 btn btn-danger")%>
         </div>
       </div>
-    </div>
+    </div> 
   <% end %>
 </div>
