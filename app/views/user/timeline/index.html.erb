@@ -1,13 +1,35 @@
-<h1>Timeline</h1>
-<p>Veja o que as pessoas que você segue estão publicando</p>
+<h1>Home</h1>
+<p>Últimas notícias</p>
+
+<div id="carouselExampleControls" style="max-height: 400;" class="carousel slide col-12" data-bs-ride="carousel">
+  <div class="carousel-inner" class="col-12">
+    <div class="carousel-item active">
+      <img style="max-height: 400px;" src="https://ciclovivo.com.br/wp-content/uploads/2020/07/boys-1807545_1280.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<h1 class="mb-2 mt-4">Denúncias</h1>
+<p>Últimas denúncias públicadas</p>
 
 <div class="row col-12 d-flex justify-content-between">
-  <div class="col-8">
+  <div class="col-12">
     <% @posts.each do |post|%>
       <%= render "user/post_card" , post: post %>
     <% end %>
-  </div>
-  <div class="col-3 mr-4">
-    <%= image_tag("girl.png", alt: "illustration")%>
   </div>
 </div>

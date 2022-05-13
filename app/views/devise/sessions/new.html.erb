@@ -1,4 +1,4 @@
-<div style="height: 100vh; width: 100vw;  !important;background-image: url('<%= resource_name == :admin ? image_path('login_bg.jpg') : image_path('login_bg3.png') %>'); background-size: cover">
+<div style="height: 100vh; width: 100vw;  !important;background-image: url('<%= resource_name == :admin ? image_path('login_bg.png') : image_path('login_bg3.jpeg') %>'); background-size: cover">
   <div class="offset-4 col-4 authentication-inner py-5">
     <div class="card col-sm-12" style="height: 80vh">
       <div class="p-4 p-sm-5">
@@ -26,7 +26,7 @@
             <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
           </div>
           <div class="d-flex justify-content-btwen align-items-center m-0">
-            <%= f.submit 'Entrar', class: "col-12 btn btn-dark" %>
+            <%= f.submit 'Entrar', class: "col-12 btn btn-success" %>
           </div>
         <% end %>
 
