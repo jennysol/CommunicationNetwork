@@ -1,0 +1,4 @@
+<%= simple_form_for @room, :url => url_for(:controller => 'rooms'), :method => 'post' do |form| %>
+  <%= form.input :name %>
+  <%= form.submit "Criar", class: 'btn btn-success' %>
+<% end %>

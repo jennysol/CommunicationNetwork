@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations], controllers: {sessions: 'admins/sessions'}
 
   namespace :admin do 
-    root to: "home#index"
+    root to: "admins#index"
     resources :admins
     resources :users, only: :index
     resources :posts, only: [:index, :show]
@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
     resources :users, only: :show
     resources :comments, only: [:create, :destroy]
+
+    resources :room_messages
+    resources :rooms
 
     post 'follow/:id', to: "subscriptions#follow", as: :follow
     post 'unfollow/:id', to: "subscriptions#unfollow", as: :unfollow

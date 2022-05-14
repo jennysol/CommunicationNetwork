@@ -1,0 +1,52 @@
+version: '3.4'
+services:
+  db:
+    image: postgres:10.17
+    container_name: communication_network_db_backend
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: communication_network_development
+    networks:
+      - communication_network_development
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+
+  backend:
+    container_name: communication_network_backend
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - '.:/communication_network'
+    environment:
+      PORT: ${BACKEND_PORT}
+      SECRET_KEY_BASE: 399bf8653b8fe5fed106ce383a07a3d2c8ade88f9faf8f6b9b70a7367f623084b0e55246b31ee1fd6616e04061bb2f1b96f0140c5d1bb870da3f81940439ddf9
+      RAILS_ENV: development
+      DATABASE_HOST: db
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: communication_network_development
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    networks:
+      - communication_network_development
+    stdin_open: true
+    tty: true
+  
+  redis:
+    image: redis:5-alpine
+    restart: always
+    command: redis-server
+    volumes:
+      - redis:/data
+    networks:
+      - communication_network_development
+
+networks:
+  communication_network_development:
+  redis:
+volumes: 
+  postgres:
+  redis:

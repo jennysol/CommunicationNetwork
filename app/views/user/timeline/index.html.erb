@@ -1,13 +1,51 @@
-<h1>Timeline</h1>
-<p>Veja o que as pessoas que você segue estão publicando</p>
+<h1>Destaques</h1>
+<p>Últimas notícias</p>
+
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" style="max-height: 350px" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner" style="max-height: 350px" >
+    <div class="carousel-item active" style="max-height: 350px">
+      <img src="https://s2.glbimg.com/812sf7bx6gNqOt1YnQZqXT3vzrU=/0x0:1032x581/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/z/w/2cJqD1RjKWo0nDU6hoDg/espuma-tiete-2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Rio Tietê fica coberto por espuma tóxica em Salto</h5>
+        <p>Espuma é provocada por produtos químicos despejados na água sem tratamento, como xampu, detergente e sabão em pó.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="max-height: 350px">
+      <img src="https://www.dino.com.br/DinoImages/0d049128-3fbb-4b40-816d-0744e427f75e.jpg?quality=100&width=620" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Conter o aquecimento global</h5>
+        <p>Muitas atividades rotineiras geram emissões atmosféricas de gases do efeito estufa (GEEs), que prejudicam o planeta.Muitas atividades rotineiras geram emissões atmosféricas de gases do efeito estufa.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="max-height: 350px">
+      <img src="https://s2.glbimg.com/9wqULhAe-kD4VtBIlMcjKWnLdoY=/0x0:1280x720/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/z/R/vxxRj3QSmByQm0Biftlg/whatsapp-image-2018-10-05-at-10.24.53-3-.jpeg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Conchas</h5>
+        <p>Com mais oxigênio, voltam a surgir peixes, plantas, algas e micro-organismos.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<h1 class="mb-2 mt-4">Denúncias</h1>
+<p>Últimas denúncias públicadas</p>
 
 <div class="row col-12 d-flex justify-content-between">
-  <div class="col-8">
+  <div class="col-12">
     <% @posts.each do |post|%>
       <%= render "user/post_card" , post: post %>
     <% end %>
-  </div>
-  <div class="col-3 mr-4">
-    <%= image_tag("girl.png", alt: "illustration")%>
   </div>
 </div>
