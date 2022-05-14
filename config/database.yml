@@ -23,8 +23,12 @@ default: &default
 
 development:
   <<: *default
-  database: social_networking_back_development
-
+  port:     5432
+  host:     <%= ENV['DATABASE_HOST']     || 'localhost' %>
+  username: <%= ENV['DATABASE_USER']     || 'postgres' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'postgres' %>
+  database: <%= ENV['DATABASE_NAME']     || "backend_#{Rails.env}" %>
+  # database: social_networking_back_development
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
