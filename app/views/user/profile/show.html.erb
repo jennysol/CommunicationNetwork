@@ -17,10 +17,10 @@
           <%= form_with(model: [:user, @post], local: true) do |f| %>
             <%= render("layouts/form_errors", record: @post)%>
             <div class="form-group">
-              <label for="exampleInputEmail1">Texto</label>
+              <label for="exampleInputEmail1">Registar Denúncia</label>
               <%= f.text_area :body, rows: 5, class: "form-control", placeholder: "Digite seu texto..." %>
             </div>
-            <button type="submit" class="btn btn-dark">Postar</button>
+            <button type="submit" class="btn btn-success">Postar</button>
           <% end%>
         </div>
       </div>
