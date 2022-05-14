@@ -7,6 +7,10 @@ class User::RoomMessagesController < UserController
                                        message: params.dig(:room_message, :message)
   
     RoomChannel.broadcast_to @room, @room_message
+
+    respond_to do |format|
+      format.js { render inline: "location.reload();" }
+    end
   end  
 
   protected

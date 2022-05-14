@@ -15,6 +15,13 @@ document.addEventListener("turbolinks:load", function () {
 
   });
 
+  // function readyFn() {
+  //   // Code to run when the document is ready.
+  //   location.reload();
+  // }
+
+  // $(document).ready(readyFn);
+
   function toggleButton(button, data) {
     var buttonIcon = button.children().first();
 

@@ -1,17 +1,17 @@
-<div class="mb-3">
-  <%= link_to new_user_room_path, class: 'btn btn-primary' do %>
-    Create a room
+<div class="mb-1">
+  <%= link_to new_user_room_path, style: 'width: 100%;', class: 'btn mt-2 btn-primary' do %>
+    Nova sala
   <% end %>
 </div>
 
 <% if @rooms.present? %>
   <nav class="nav flex-column">
     <% @rooms.each do |room| %>
-      <%= link_to room.name, user_room_path(room), class: 'nav-link room-nav-link' %>
+      <%= link_to room.name, user_room_url(room), style: 'text-align: center; background: rgba(0, 0, 0, 0.1);', class: ' mt-1 mb-1 nav-link room-nav-link' %>
     <% end %>
   </nav>
 <% else %>
   <div class="text-muted">
-    The are no rooms
+    Nenhuma sala criada.
   </div>
 <% end %>

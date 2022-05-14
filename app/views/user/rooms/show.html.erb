@@ -1,4 +1,4 @@
-<h1>
+<h1 class="reload-page">
   <%= @room.name %>
 </h1>
 
@@ -36,7 +36,7 @@
     </div>
 
     <%= simple_form_for @room_message, :url => url_for(:controller => 'room_messages'), :method => 'post', remote: true do |form| %>
-      <div class="input-group mb-3">
+      <div class="input-group mb-3 mt-3">
         <%= form.input :message, as: :string,
                                  wrapper: false,
                                  label: false,
@@ -54,7 +54,7 @@
 </div>
 
 <div class="d-none" data-role="message-template">
-  <div class="chat-message-container">
+  <div class="chat-message-container" style="background: rgba(0, 0, 0, 0.1); border-radius: 10px;">
     <div class="row no-gutters">
       <div class="col-auto text-center">
         <img src="" class="avatar" alt="" data-role="user-avatar">
@@ -62,9 +62,9 @@
 
       <div class="col">
         <div class="message-content">
-          <p class="mb-1" data-role="message-text"></p>
+          <p class="mb-1 pt-1 ml-2" data-role="message-text"></p>
 
-          <div class="text-right">
+          <div class="text-right pr-1">
             <small data-role="message-date"></small>
           </div>
         </div>
